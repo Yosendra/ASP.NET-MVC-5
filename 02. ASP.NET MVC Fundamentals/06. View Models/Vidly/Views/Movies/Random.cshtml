@@ -1,0 +1,14 @@
+﻿@* @model Vidly.Models.Movie *@
+@model Vidly.ViewModels.RandomMovieVM
+
+@{
+    ViewBag.Title = "Random";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@* Not using Movie anymore as ViewModel *@
+@*<h2>@Model.Name</h2>*@
+
+@* Remember, we use ViewModel now *@
+<h2>@Model.Movie.Name</h2>
+
