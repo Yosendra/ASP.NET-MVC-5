@@ -1,0 +1,37 @@
+﻿@* We change the model for this view *@
+@*@model Vidly.Models.Customer*@
+@model Vidly.ViewModels.NewCustomerVM
+
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Customer</h2>
+
+@using (Html.BeginForm("Create", "Customers"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customer.Name)
+        @Html.TextBoxFor(m => m.Customer.Name, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group mt-2">
+        @Html.LabelFor(m => m.Customer.BirthDate, "Date of Birth")
+        @Html.TextBoxFor(m => m.Customer.BirthDate, new { @class = "form-control" })
+    </div>
+
+    <div class="form-check mt-3">
+        @Html.CheckBoxFor(m => m.Customer.IsSubscribedToNewsletter, new { @class = "form-check-input" })
+        @Html.LabelFor(m => m.Customer.IsSubscribedToNewsletter, "Subscribed to Newsletter?")
+    </div>
+
+    // this is the dropdown-list of membership types
+    <div class="form-group mt-3">
+        @Html.LabelFor(m => m.Customer.MembershipTypeId, "Membership Type")
+        @Html.DropDownListFor(m => m.Customer.MembershipTypeId, 
+                            new SelectList(Model.MembershipTypes, "Id", "Name"), 
+                            "Select Membership Type", // this is placeholder for empty option
+                            new { @class = "form-control" })
+    </div>
+}
