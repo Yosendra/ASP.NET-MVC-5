@@ -8,7 +8,7 @@ using System.Web.Routing;
  * Adding Create() action method in CustomersController
  * 
  * Look at:
- * • CustomersController -> Create(), New.cshtml
+ * • CustomersController -> Create()
 */
 
 namespace Vidly
