@@ -46,5 +46,10 @@ namespace Vidly.Controllers
         //        new Movie { Id = 2, Name = "Wall-e"},
         //    };
         //}
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
     }
 }

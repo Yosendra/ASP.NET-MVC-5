@@ -34,7 +34,6 @@ namespace Vidly.Controllers
             return View(customer);
         }
 
-
         protected override void Dispose(bool disposing)
         {
             _context.Dispose();
